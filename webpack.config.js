@@ -8,7 +8,8 @@ var VENDOR_LIBS = [
     'flux',
     'immutable',
     'jquery',
-    'bluebird'
+    'bluebird',
+    'eventemitter2'
 ];
 
 module.exports = {
