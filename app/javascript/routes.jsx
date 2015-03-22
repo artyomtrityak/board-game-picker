@@ -1,13 +1,22 @@
-import React from 'react'
-import {Route, DefaultRoute} from 'react-router';
-import Router from 'react-router';
+import React from 'react';
+import Router, {Route, DefaultRoute, NotFoundRoute} from 'react-router';
 
 // Components
-import NoopComponent from './components/noop'
+import AppComponent from './components/app';
+import NotFoundComponent from './components/not-found';
+import HelloComponent from './components/hello';
+import GamesPickerComponent from './components/games-picker';
+import ContactsComponent from './components/contacts';
 
+//NB: get Routes from modules and pass as {ModuleARoutes}
 var routes = (
-  <Route name='app' path='/' handler={NoopComponent}>
+  <Route name='root' path='/' handler={AppComponent}>
+    <Route name='contacts' handler={ContactsComponent} />
+    <Route name='games-picker' handler={GamesPickerComponent} />
     
+    <DefaultRoute name='hello' handler={HelloComponent} />
+    
+    <NotFoundRoute handler={NotFoundComponent} />
   </Route>
 );
 
