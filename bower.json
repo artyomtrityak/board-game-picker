@@ -1,0 +1,28 @@
+{
+  "name": "board-game-picker",
+  "version": "0.0.0",
+  "homepage": "https://github.com/artyomtrityak/board-game-picker",
+  "authors": [
+    "Artyom Trityak <art.trityak@gmail.com>"
+  ],
+  "main": "app/javascript/routes.js",
+  "moduleType": [
+    "es6"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.13.1",
+    "react-router": "~0.13.1",
+    "flux": "~2.0.2",
+    "immutable": "~3.6.4",
+    "bluebird": "~2.9.14",
+    "jquery": "~2.1.3"
+  }
+}
