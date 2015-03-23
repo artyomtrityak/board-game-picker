@@ -5,10 +5,17 @@ var GamesPickerActions = {
   loadStep: (stepId) => {
     var step = GamesPickerWebutils.getStep(stepId);
     
-    AppDispatcher.dispatch({
-      actionType: 'LOADED_STEP',
-      step: step
-    });
+    if (step) {
+      AppDispatcher.dispatch({
+        actionType: 'LOADED_STEP',
+        step: step
+      });  
+    } else {
+      AppDispatcher.dispatch({
+        actionType: 'STEP_NOT_FOUND'
+      });
+    }
+    
   }
 };
 

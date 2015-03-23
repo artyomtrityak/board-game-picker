@@ -3,6 +3,10 @@ import {Link} from 'react-router';
 import GamesPickerStore from '../stores/games-picker.store';
 import GamesPickerActions from '../actions/games-picker.actions';
 
+//Components
+import Question from './question'
+import Answer from './answer'
+
 export default React.createClass({
   contextTypes: {
     router: React.PropTypes.func
@@ -10,6 +14,12 @@ export default React.createClass({
 
   getInitialState() {
     return {};
+  },
+
+  componentWillReceiveProps() {
+    GamesPickerActions.loadStep(
+      this.context.router.getCurrentParams().stepId
+    );
   },
 
   componentDidMount() {
@@ -28,9 +38,27 @@ export default React.createClass({
   },
 
   render() {
+    var step = this.state.currentStep,
+        details;
+    
+    if (!step) {
+      return null;
+    }
+
+    if (step.get('type') === 'question') {
+      details = <Question step={step} />;
+    }
+
+    if (step.get('type') === 'answer') {
+      details = <Answer step={step} />;
+    }
+
     return (
       <div>
-        Games picker {this.state.test}, {this.context.router.getCurrentParams().stepId}
+        Games picker
+        <div>
+          {details}
+        </div>
       </div>
     )
   }

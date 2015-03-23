@@ -1,6 +1,7 @@
 var STEPS = {
   "step1": {
-    "type": "question", text: "Как ты относишься к случайностям?",
+    "type": "question",
+    text: "Как ты относишься к случайностям?",
     "answers": [
       {
         text: "Хорошо", next: "step2"
@@ -15,8 +16,11 @@ var STEPS = {
 };
 
 var GamesPickerUtils = {
-  getStep: () => {
-    return STEPS['step1'];
+  getStep: (stepId) => {
+    if (!stepId) {
+      stepId = "step1";
+    }
+    return STEPS[stepId]; 
   }
 };
 
