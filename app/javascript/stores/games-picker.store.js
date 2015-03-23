@@ -1,5 +1,5 @@
 import EventEmitter from 'eventemitter2';
-import AppDispatcher from '../dispatchers/dispatcher';
+import AppDispatcher from '../dispatchers/app.dispatcher';
 import Immutable from 'immutable';
 
 var PRIVATE_API = {
@@ -16,8 +16,6 @@ class GamesPickerStore extends EventEmitter {
   }
 }
 var store = new GamesPickerStore();
-export default store;
-
 
 // Dispatching
 AppDispatcher.register(function(action) {
@@ -37,3 +35,5 @@ function loadStep(step) {
   PRIVATE_API.currentStep = Immutable.fromJS(step);
   store.emit('change');
 }
+
+export default store;

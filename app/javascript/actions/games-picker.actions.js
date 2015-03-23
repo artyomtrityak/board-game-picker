@@ -1,9 +1,9 @@
-import AppDispatcher from '../dispatchers/dispatcher';
+import AppDispatcher from '../dispatchers/app.dispatcher';
 import GamesPickerWebutils from '../webutils/games-picker.webutils'
 
 var GamesPickerActions = {
-  loadStep: (params) => {
-    var step = GamesPickerWebutils.getStep();
+  loadStep: (stepId) => {
+    var step = GamesPickerWebutils.getStep(stepId);
     
     AppDispatcher.dispatch({
       actionType: 'LOADED_STEP',
