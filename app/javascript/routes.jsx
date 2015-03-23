@@ -12,7 +12,9 @@ import ContactsComponent from './components/contacts';
 var routes = (
   <Route name='root' path='/' handler={AppComponent}>
     <Route name='contacts' handler={ContactsComponent} />
-    <Route name='games-picker' handler={GamesPickerComponent} />
+    <Route name='games-picker' handler={GamesPickerComponent}>
+      <Route name='games-picker-step' path=":stepId" handler={GamesPickerComponent} />
+    </Route>
     
     <DefaultRoute name='hello' handler={HelloComponent} />
     

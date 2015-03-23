@@ -6,7 +6,7 @@ var GamesPickerActions = {
     var step = GamesPickerWebutils.getStep();
     
     AppDispatcher.dispatch({
-      action: 'LOAD_STEPS',
+      actionType: 'LOADED_STEP',
       step: step
     });
   }

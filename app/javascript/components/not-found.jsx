@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-export default class NotFoundComponent extends React.Component {
+export default React.createClass({
   render() {
     return (
       <div>
@@ -9,4 +9,4 @@ export default class NotFoundComponent extends React.Component {
       </div>
     )
   }
-}
+});

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, RouteHandler} from 'react-router';
 
-export default class NoopComponent extends React.Component {
+export default React.createClass({
   render() {
     return (
       <div>
@@ -14,4 +14,4 @@ export default class NoopComponent extends React.Component {
       </div>
     )
   }
-}
+});
