@@ -1,5 +1,5 @@
-import i18en from './en'
-import i18ru from './ru'
+import i18en from './en-en'
+import i18ru from './ru-ru'
 
 var localized;
 if (window.navigator.language.match(/ru/)) {
