@@ -7,6 +7,13 @@ import NotFoundComponent from './components/not-found';
 import HelloComponent from './components/hello';
 import GamesPickerComponent from './components/games-picker';
 
+import ReactIntl from 'react-intl'
+
+console.log(ReactIntl);
+
+import intlData from './i18n/index'
+console.log(intlData);
+
 //NB: get Routes from modules and pass as {ModuleARoutes}
 var routes = (
   <Route name='root' path='/' handler={AppComponent}>
@@ -21,5 +28,5 @@ var routes = (
 );
 
 Router.run(routes, (Handler) => {
-  React.render(<Handler/>, document.getElementById('react-root'));
+  React.render(<Handler {...intlData}/>, document.getElementById('react-root'));
 });

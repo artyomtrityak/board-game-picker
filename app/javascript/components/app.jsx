@@ -1,9 +1,11 @@
 import React from 'react';
 import {Link, RouteHandler} from 'react-router';
+import {IntlMixin} from 'react-intl'
 import classNames from 'classnames';
 
 
 export default React.createClass({
+  mixins: [IntlMixin],
   contextTypes: {
     router: React.PropTypes.func
   },
@@ -21,6 +23,8 @@ export default React.createClass({
       active: router.isActive('games-picker') || router.isActive('games-picker-step')
     });
 
+    console.log(this.getIntlMessage('post.meta'));
+
     return (
       <div>        
         <nav className="navbar navbar-default navbar-static-top">
@@ -31,7 +35,7 @@ export default React.createClass({
             <div id="navbar" className="navbar-collapse collapse">
               <ul className="nav navbar-nav">
                 <li className={helloCls}>
-                  <Link to='hello'>Just to say Hello</Link>
+                  <Link to='hello'>Просто </Link>
                 </li>
                 <li className={pickerCls}>
                   <Link to='games-picker'>What board game should i pick?</Link>

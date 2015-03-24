@@ -1,8 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router';
+import {IntlMixin} from 'react-intl'
 
 
 export default React.createClass({
+  mixins: [IntlMixin],
+
   render() {
     var answers = this.props.step.get('answers').toArray().map(item => {
       return <div className="btn-group" role="group" key={item.get('next')}>
