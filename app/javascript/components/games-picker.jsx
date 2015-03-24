@@ -7,6 +7,7 @@ import GamesPickerActions from '../actions/games-picker.actions';
 import Question from './question'
 import Answer from './answer'
 
+
 export default React.createClass({
   contextTypes: {
     router: React.PropTypes.func
@@ -55,10 +56,7 @@ export default React.createClass({
 
     return (
       <div>
-        Games picker
-        <div>
-          {details}
-        </div>
+        {details}
       </div>
     )
   }

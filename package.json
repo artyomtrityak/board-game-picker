@@ -29,5 +29,8 @@
     "jsx-loader": "^0.12.2",
     "webpack": "^1.7.3",
     "webpack-dev-server": "^1.7.0"
+  },
+  "dependencies": {
+    "react-intl": "^1.2.0"
   }
 }

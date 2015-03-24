@@ -9,7 +9,9 @@ var VENDOR_LIBS = [
     'immutable',
     'jquery',
     'bluebird',
-    'eventemitter2'
+    'eventemitter2',
+    'classnames',
+    'react-intl'
 ];
 
 module.exports = {
