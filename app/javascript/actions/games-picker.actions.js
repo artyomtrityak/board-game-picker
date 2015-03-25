@@ -2,7 +2,7 @@ import AppDispatcher from '../dispatchers/app.dispatcher';
 import GamesPickerWebutils from '../webutils/games-picker.webutils'
 
 var GamesPickerActions = {
-  loadStep: (stepId) => {
+  loadStep(stepId) {
     var step = GamesPickerWebutils.getStep(stepId);
     
     if (step) {
