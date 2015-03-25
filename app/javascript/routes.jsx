@@ -7,12 +7,8 @@ import NotFoundComponent from './components/not-found';
 import HelloComponent from './components/hello';
 import GamesPickerComponent from './components/games-picker';
 
-import ReactIntl from 'react-intl'
-
-console.log(ReactIntl);
-
+// i18n
 import intlData from './i18n/index'
-console.log(intlData);
 
 //NB: get Routes from modules and pass as {ModuleARoutes}
 var routes = (
