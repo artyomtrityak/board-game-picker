@@ -8,7 +8,7 @@ import HelloComponent from './components/hello';
 import GamesPickerComponent from './components/games-picker';
 
 // i18n
-import intlData from './i18n/index'
+import intlData from './i18n/index';
 
 //NB: get Routes from modules and pass as {ModuleARoutes}
 var routes = (
