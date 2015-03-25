@@ -4,8 +4,8 @@ import GamesPickerStore from '../stores/games-picker.store';
 import GamesPickerActions from '../actions/games-picker.actions';
 
 //Components
-import Question from './question'
-import Answer from './answer'
+import Question from './question';
+import Answer from './answer';
 
 
 export default React.createClass({

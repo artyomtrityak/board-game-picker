@@ -11,8 +11,16 @@ var STEPS = {
       }
     ]
   },
-  "step2": {"type": "answer", "text": "Descent"},
-  "step3": {"type": "answer", "text": "Stone Age"}
+  "step2": {
+    "type": "answer",
+    "text": "Descent",
+    "img": "path-to-image"
+  },
+  "step3": {
+    "type": "answer",
+    "text": "Stone Age",
+    "img": "path-to-image"
+  }
 };
 
 var GamesPickerUtils = {

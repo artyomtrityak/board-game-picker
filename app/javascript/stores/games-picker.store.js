@@ -2,17 +2,22 @@ import EventEmitter from 'eventemitter2';
 import AppDispatcher from '../dispatchers/app.dispatcher';
 import Immutable from 'immutable';
 
-var PRIVATE_DATA = {
+var PRIVATE = {
+  //DATA
   currentStep: undefined,
-  status: 'DISPLAY_STEP'
+  status: 'NOT_LOADED',
+
+  //API
+  loadStep: loadStep,
+  unsetStep: unsetStep
 };
 
 //Store and Public Store API
 class GamesPickerStore extends EventEmitter {
   getData() {
     return {
-      currentStep: PRIVATE_DATA.currentStep,
-      status: PRIVATE_DATA.status
+      currentStep: PRIVATE.currentStep,
+      status: PRIVATE.status
     };
   }
 }
@@ -23,11 +28,11 @@ AppDispatcher.register(function(action) {
   switch(action.actionType) {
 
     case 'LOADED_STEP':
-      loadStep(action.step);
+      PRIVATE.loadStep(action.step);
       break;
 
     case 'STEP_NOT_FOUND':
-      unsetStep();
+      PRIVATE.unsetStep();
       break;
 
     default:
@@ -37,14 +42,14 @@ AppDispatcher.register(function(action) {
 
 // Private API functions
 function loadStep(step) {
-  PRIVATE_DATA.currentStep = Immutable.fromJS(step);
-  PRIVATE_DATA.status = 'DISPLAY_STEP';
+  PRIVATE.currentStep = Immutable.fromJS(step);
+  PRIVATE.status = 'DISPLAY_STEP';
   store.emit('change');
 }
 
 function unsetStep() {
-  PRIVATE_DATA.currentStep = undefined;
-  PRIVATE_DATA.status = 'STEP_NOT_FOUND';
+  PRIVATE.currentStep = undefined;
+  PRIVATE.status = 'STEP_NOT_FOUND';
   store.emit('change'); 
 }
 
